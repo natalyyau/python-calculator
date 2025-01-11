@@ -1,2 +1,5 @@
-class Calculations:
-    def __init__(self):
+expression = ""
+def add_to_expression(num):
+    global expression
+    expression = expression + str(num)
+
