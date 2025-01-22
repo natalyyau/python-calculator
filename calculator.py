@@ -1,6 +1,7 @@
 import tkinter as tk
 import math
 
+#creates the calculator window
 root = tk.Tk()
 root.title("Calculator")
 
@@ -15,7 +16,7 @@ def add_to_expression(num):
 def evaluate_expression():
     global expression
     try:
-        result = eval(expression.replace("÷", "/").replace("×", "*").replace("√", "math.sqrt(") + ")") 
+        result = eval(expression.replace("÷", "/").replace("×", "*").replace("^", "**")) 
         display.delete(0, tk.END)
         display.insert(tk.END, result)
         expression = str(result)  # Updates expression to the result
@@ -38,7 +39,7 @@ button_frame = tk.Frame(root)
 button_frame.grid(row=1, column=0)
 
 button_texts = [
-        ("(", 0, 0), (")", 0, 1), ("√", 0, 2), ("clear", 0, 3),
+        ("(", 0, 0), (")", 0, 1), ("^", 0, 2), ("clear", 0, 3),
         ("7", 1, 0), ("8", 1, 1), ("9", 1, 2), ("÷", 1, 3),
         ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("×", 2, 3),
         ("1", 3, 0), ("2", 3, 1), ("3", 3, 2), ("-", 3, 3),
